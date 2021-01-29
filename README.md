@@ -4,7 +4,7 @@ PyTorch Implementation for Our Paper: "Object Detection Made Simpler by Eliminat
 
 ## Requirements
 * Python 3.7
-* PyTorch 1.1
+* PyTorch 1.5.1
 * [mmdetectoin](https://github.com/open-mmlab/mmdetection)
 
 ## Usage:
