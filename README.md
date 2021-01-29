@@ -39,3 +39,7 @@ If you use the package in your research, please cite our paper:
       primaryClass={cs.CV}
 }
 ```
+
+## PS
+团队长期招聘中，社招/实习/校招，我们都要 !
+欢迎投递简历，邮箱: `zhouqiang@zju.edu.cn`
