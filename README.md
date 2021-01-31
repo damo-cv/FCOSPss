@@ -33,7 +33,7 @@ The code is being submitted to the company for open source review.
 If we have a pretrained model, only finetuning the PSS head can save the training time.
 
 | Model  | Backbone  | MS Training  | lr sched  | mAP <br> pretrain model (w NMS)  | mAP <br> finetuned PSS (w/o NMS)
-| ------------ | ------------ | ------------ | ------------ | ------------ |------------ |------------ |
+| ------------ | ------------ | ------------ | ------------ | ------------ |------------ |
 | GFocalV2Pss  | R50  | Yes  | 12  | [43.9](https://github.com/implus/GFocalV2 "43.9")  |43.3 |
 | GFocalV2Pss | X-101-32x4d-DCN  | Yes | 12  | [48.8](https://github.com/implus/GFocalV2 "48.8")  | 48.2 |
 | GFocalV2Pss | R2N-101-DCN | Yes | 12 | [49.9](https://github.com/implus/GFocalV2 "49.9") | 49.2 |
