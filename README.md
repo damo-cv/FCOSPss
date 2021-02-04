@@ -11,7 +11,7 @@ PyTorch Implementation for Our Paper: "Object Detection Made Simpler by Eliminat
 
 The code is being submitted to the company for open source review.
 
-## Models:
+## PSS for nms-free Object Detection:
 
 #### End-to-End Training
 
@@ -38,7 +38,18 @@ If we have a pretrained model, only finetuning the PSS head can save the trainin
 | GFocalV2Pss | X-101-32x4d-DCN  | Yes | 12  | [48.8](https://github.com/implus/GFocalV2 "48.8")  | 48.2 |
 | GFocalV2Pss | R2N-101-DCN | Yes | 12 | [49.9](https://github.com/implus/GFocalV2 "49.9") | 49.2 |
 
-    
+
+
+## PSS for nms-free Instance Segmentation
+
+#### End-to-End Training
+
+|  Model | Backbone | MS Training  | lr sched | bbox mAP (COCO2017 val) | segm mAP (COCO2017 val) | link
+| ------------ | ------------ |------------ |------------ |------------ |------------ | ------------ |
+| CondInst | R50 | Yes | 1x | 38.9 | 34.1 | |
+| CondInstPss | R50 | Yes | 1x | 39.4 | 34.4 | |
+
+
 ## Citation
 If you use the package in your research, please cite our paper:
 ```
