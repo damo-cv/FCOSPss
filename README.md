@@ -44,10 +44,13 @@ If we have a pretrained model, only finetuning the PSS head can save the trainin
 
 #### End-to-End Training
 
-|  Model | Backbone | MS Training  | lr sched | bbox mAP (COCO2017 val) | segm mAP (COCO2017 val) | link
-| ------------ | ------------ |------------ |------------ |------------ |------------ | ------------ |
-| CondInst | R50 | Yes | 1x | 38.9 | 34.1 | |
-| CondInstPss | R50 | Yes | 1x | 39.4 | 34.4 | |
+|  Model | NMS | Backbone | MS Training  | lr sched | bbox mAP (COCO2017 val) | segm mAP (COCO2017 val) | link
+| ------------ | ------------ | ------------ |------------ |------------ |------------ |------------ | ------------ |
+| CondInst | Yes | R50 | Yes | 1x | 38.9 | 34.1 | |
+| CondInst | Yes | R50 | Yes | 3x | 42.1 | 37.0 | |
+| CondInstPss | No | R50 | Yes | 1x | 39.4 | 34.4 | |
+| CondInstPss | No | R50 | Yes | 3x | 42.4 | 36.8 | |
+| CondInstPss | No | R101 | Yes | 3x | 44.0 | 38.2 | |
 
 
 ## Citation
