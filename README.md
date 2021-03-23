@@ -15,28 +15,32 @@ The code is being submitted to the company for open source review.
 
 #### End-to-End Training
 
-|  Model | Backbone | MS Training  | lr sched | mAP (COCO2017 val) | link
-| ------------ | ------------ |------------ |------------ |------------ |------------ |
-| FCOS | R50 | Yes  | 1x | 38.6 | soon |
-| FCOS | R50 | Yes  | 2x | 41.0 | soon |
-| FCOS | R50 | Yes | 3x | 42.0 | soon |
-| ATSS | R50 | Yes | 1x | 39.5 | soon |
-| ATSS | R50 | Yes | 2x | 41.9 | soon |
-| ATSS | R50 | Yes | 3x | 42.8 | soon |
-| FCOSPss | R50 | Yes | 3x | 42.3 | soon |
-| ATSSPss | R50 | Yes | 3x | 42.6 | soon |
-| ATSSPss | R101| Yes | 3x | 44.2 | |
-| ATSSPss | X-101-32x4d-DCN | Yes | 3x | 47.5 | |
-| ATSSPss | R2N-101-DCN | Yes | 3x | 48.5 | |
+|  Model | Backbone | lr sched | mAP (COCO2017 val) | link
+| ------------ | ------------ |------------ |------------ |------------ |
+| FCOS | R50  | 3x | 42.0 | [model](http://ai4prz5kwonline.oss-cn-zhangjiakou.aliyuncs.com/jianchong_new%2Ffcos_r50-caffe_coco-480-800-3x.pth?Expires=1931844166&OSSAccessKeyId=FbmV29ZaCO4CLhjO&Signature=7pHiB3dhpl5lgzxJaR5i5J87dBA%3D) |
+| ATSS | R50 | 3x | 42.8 | [model](http://ai4prz5kwonline.oss-cn-zhangjiakou.aliyuncs.com/jianchong_new%2Fatss_r50-caffe_coco-480-800-3x.pth?Expires=2416484320&OSSAccessKeyId=FbmV29ZaCO4CLhjO&Signature=JnsqZMLOWd6grL%2F6thoa4kITlWM%3D) |
+| FCOS<sub>pss</sub> | R50  | 3x | 42.3 |  |
+| ATSS<sub>pss</sub> | R50  | 3x | 42.6 |  |
+| VFNET<sub>pss</sub> | R50 | 3x | 44.0 |  |
+| FCOS<sub>pss</sub> | R101  | 3x | 44.1 |  |
+| ATSS<sub>pss</sub> | R101 | 3x | 44.2 |  |
+| VFNET<sub>pss</sub> | R101 | 3x | 45.7 |  |
+| FCOS<sub>pss</sub> | X-101-DCN  | 2x | 47.0 |  |
+| ATSS<sub>pss</sub> | X-101-DCN  | 2x | 47.3 |  |
+| VFNET<sub>pss</sub> | X-101-DCN | 2x | 49.3 |  |
+| FCOS<sub>pss</sub> | R2N-101-DCN | 2x | 48.2 |  |
+| ATSS<sub>pss</sub> | R2N-101-DCN  | 2x | 48.6 |  |
+| VFNET<sub>pss</sub> | R2N-101-DCN | 2x | 50.0 |  |
+**NOTE:** All models are trained with multi-scale training schedule of ‘[480, 800] $\times$ 1333’.
 
 #### Two-Step Training
 If we have a pretrained model, only finetuning the PSS head can save the training time.
 
 | Model  | Backbone  | MS Training  | lr sched  | mAP <br> pretrain model (w NMS)  | mAP <br> finetuned PSS (w/o NMS)
 | ------------ | ------------ | ------------ | ------------ | ------------ |------------ |
-| GFocalV2Pss  | R50  | Yes  | 12  | [43.9](https://github.com/implus/GFocalV2 "43.9")  |43.3 |
-| GFocalV2Pss | X-101-32x4d-DCN  | Yes | 12  | [48.8](https://github.com/implus/GFocalV2 "48.8")  | 48.2 |
-| GFocalV2Pss | R2N-101-DCN | Yes | 12 | [49.9](https://github.com/implus/GFocalV2 "49.9") | 49.2 |
+| GFocalV2<sub>pss</sub>  | R50  | Yes  | 12  | [43.9](https://github.com/implus/GFocalV2 "43.9")  |43.3 |
+| GFocalV2<sub>pss</sub> | X-101-32x4d-DCN  | Yes | 12  | [48.8](https://github.com/implus/GFocalV2 "48.8")  | 48.2 |
+| GFocalV2<sub>pss</sub> | R2N-101-DCN | Yes | 12 | [49.9](https://github.com/implus/GFocalV2 "49.9") | 49.2 |
 
 
 
@@ -44,14 +48,18 @@ If we have a pretrained model, only finetuning the PSS head can save the trainin
 
 #### End-to-End Training
 
-|  Model | NMS | Backbone | MS Training  | lr sched | bbox mAP (COCO2017 val) | segm mAP (COCO2017 val) | link
+|  Model | Backbone  | lr sched | bbox mAP  | segm mAP | link
 | ------------ | ------------ | ------------ |------------ |------------ |------------ |------------ | ------------ |
-| CondInst | Yes | R50 | Yes | 1x | 38.9 | 34.1 | |
-| CondInst | Yes | R50 | Yes | 3x | 42.1 | 37.0 | |
-| CondInstPss | No | R50 | Yes | 1x | 39.4 | 34.4 | |
-| CondInstPss | No | R50 | Yes | 3x | 42.4 | 36.8 | |
-| CondInstPss | No | R101 | Yes | 3x | 44.0 | 38.2 | |
+| [CondInst](https://github.com/aim-uofa/AdelaiDet/tree/master/configs/CondInst)  | R50  | 3x | 41.9 | 37.5 | |
+| CondInst<sub>pss</sub> | R50  | 3x | 41.2 | 36.7 | |
+| [CondInst + sem](https://github.com/aim-uofa/AdelaiDet/tree/master/configs/CondInst)  | R50  | 3x | 42.6 | 38.2 | |
+| CondInst<sub>pss</sub> + sem | R50  | 3x | 42.3 | 37.7 | |
+| [CondInst](https://github.com/aim-uofa/AdelaiDet/tree/master/configs/CondInst)  | R101  | 3x | 43.3 | 38.6 | |
+| CondInst<sub>pss</sub> | R101  | 3x | 43.1 | 38.2 | |
+| [CondInst + sem](https://github.com/aim-uofa/AdelaiDet/tree/master/configs/CondInst)  | R101  | 3x | 44.6 | 39.8 | |
+| CondInst<sub>pss</sub> + sem | R101  | 3x | 44.1 | 39.3 | |
 
+**NOTE:** All models are trained with multi-scale training schedule of ‘[640, 800] $\times$ 1333’.
 
 ## Citation
 If you use the package in your research, please cite our paper:
