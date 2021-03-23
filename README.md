@@ -31,6 +31,7 @@ The code is being submitted to the company for open source review.
 | FCOS<sub>pss</sub> | R2N-101-DCN | 2x | 48.2 |  |
 | ATSS<sub>pss</sub> | R2N-101-DCN  | 2x | 48.6 |  |
 | VFNET<sub>pss</sub> | R2N-101-DCN | 2x | 50.0 |  |
+
 **NOTE:** All models are trained with multi-scale training schedule of ‘[480, 800] $\times$ 1333’.
 
 #### Two-Step Training
@@ -49,7 +50,7 @@ If we have a pretrained model, only finetuning the PSS head can save the trainin
 #### End-to-End Training
 
 |  Model | Backbone  | lr sched | bbox mAP  | segm mAP | link
-| ------------ | ------------ | ------------ |------------ |------------ |------------ |------------ | ------------ |
+| ------------ | ------------ | ------------ |------------ |------------ |------------ |
 | [CondInst](https://github.com/aim-uofa/AdelaiDet/tree/master/configs/CondInst)  | R50  | 3x | 41.9 | 37.5 | |
 | CondInst<sub>pss</sub> | R50  | 3x | 41.2 | 36.7 | |
 | [CondInst + sem](https://github.com/aim-uofa/AdelaiDet/tree/master/configs/CondInst)  | R50  | 3x | 42.6 | 38.2 | |
